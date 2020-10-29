@@ -1,0 +1,32 @@
+.header{
+    height:130px;
+    width:100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+img{
+    position: absolute;
+    top:0;
+    bottom: 0px;
+    left:80px;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+   
+}
+
+ span{ 
+    position: absolute;
+    top:43px;
+    right:80px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: lighter;
+    color: #231f20;
+}
+
+
+

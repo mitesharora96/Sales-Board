@@ -1,0 +1,144 @@
+[
+
+	{
+		"D_ID": "D001",
+		"Sales_Rep":"John Doe",
+		"Date":"07/20/2018",
+		"Client":"Oberio Group of Hotels",
+		"PCP":"Mehmud Retelli",
+		"Title": "C level",
+		"Vertical": "Marketing",
+		"Meeting_location": "Goto Meeting",
+		"POI": "Understand their current ecosystem",
+		"Outcome": "Send first cut of proposed solution.",
+		"E_status": "Needs defined"
+	},
+	
+	{
+		"D_ID": "D002",
+		"Sales_Rep":"Ethan Hunt",
+		"Date":"07/20/2018",
+		"Client":"Taj Group of Hotels",
+		"PCP":"Avie Peasgood",
+		"Title": "C level",
+		"Vertical": "Sales",
+		"Meeting_location": "Video",
+		"POI": "Demo the product",
+		"Outcome": "She will get back with next meeting",
+		"E_status": "contact made"
+	},
+
+	{
+		"D_ID": "D003",
+		"Sales_Rep":"John Doe",
+		"Date":"07/20/2018",
+		"Client":"Accenture",
+		"PCP":"Dew Telbi",
+		"Title": "C level",
+		"Vertical": "Senior Management",
+		"Meeting_location": "Face to face",
+		"POI": "Negotiations",
+		"Outcome": "Need to get final approval.",
+		"E_status": "Negotiations started"
+	},
+
+	{
+		"D_ID": "D004",
+		"Sales_Rep":"Julia Cruise",
+		"Date":"07/20/2018",
+		"Client":"Google",
+		"PCP":"Jerry Casewell",
+		"Title": "Sr. Manager level",
+		"Vertical": "Technology",
+		"Meeting_location": "Call",
+		"POI": "Intoductory call",
+		"Outcome": "Need to send them reminder for meeting.",
+		"E_status": "Contact made"
+	},
+
+	{
+		"D_ID": "D005",
+		"Sales_Rep":"Tom Roberts",
+		"Date":"07/20/2018",
+		"Client":"Microsoft",
+		"PCP":"Denny Helms",
+		"Title": "VP Level",
+		"Vertical": "Senior Management",
+		"Meeting_location": "Email",
+		"POI": "Confirm final meeting",
+		"Outcome": "Meeting confirmed for tomorrow.",
+		"E_status": "Negotiations started"
+	},
+
+	{
+		"D_ID": "D006",
+		"Sales_Rep":"John Doe",
+		"Date":"07/21/2018",
+		"Client":"Oberio Group of Hotels",
+		"PCP":"Mehmud Retelli",
+		"Title": "C level",
+		"Vertical": "Marketing",
+		"Meeting_location": "Face to face",
+		"POI": "propose our solution",
+		"Outcome": "Send them updated proposal.",
+		"E_status": "Needs defined"
+	},
+	
+
+	
+	{
+		"D_ID": "D007",
+		"Sales_Rep":"Ethan Hunt",
+		"Date":"07/21/2018",
+		"Client":"Taj Group of Hotels",
+		"PCP":"Avie Peasgood",
+		"Title": "C level",
+		"Vertical": "Sales",
+		"Meeting_location": "Call",
+		"POI": "Fix up next meeting",
+		"Outcome": "She is out now, fix meeting once back",
+		"E_status": "contact made"
+	},
+
+	{
+		"D_ID": "D008",
+		"Sales_Rep":"John Doe",
+		"Date":"07/21/2018",
+		"Client":"Accenture",
+		"PCP":"Dew Telbi",
+		"Title": "C level",
+		"Vertical": "Senior Management",
+		"Meeting_location": "Face to face",
+		"POI": "Deal Signing",
+		"Outcome": "Deal Closed.",
+		"E_status": "Won"
+	},
+
+	{
+		"D_ID": "D009",
+		"Sales_Rep":"Julia Cruise",
+		"Date":"07/21/2018",
+		"Client":"Google",
+		"PCP":"Jerry Casewell",
+		"Title": "Sr. Manager level",
+		"Vertical": "Technology",
+		"Meeting_location": "Text",
+		"POI": "Fix up next meeting with sales head",
+		"Outcome": "Scheduled for next week.",
+		"E_status": "Contact made"
+	},
+
+	{
+		"D_ID": "D010",
+		"Sales_Rep":"Tom Roberts",
+		"Date":"07/21/2018",
+		"Client":"Microsoft",
+		"PCP":"Denny Helms",
+		"Title": "VP Level",
+		"Vertical": "Senior Management",
+		"Meeting_location": "Face to face",
+		"POI": "Finalize negotiations",
+		"Outcome": "Deal lost.",
+		"E_status": "Lost"
+	}
+]
