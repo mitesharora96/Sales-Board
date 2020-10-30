@@ -3,6 +3,7 @@
     width:100%;
     box-sizing: border-box;
     position: relative;
+    margin-bottom: 0;
 }
 
 img{
