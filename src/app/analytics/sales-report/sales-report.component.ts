@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-sales-report',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesReportComponent implements OnInit {
 
+  items: MenuItem[];
+  activeItem: MenuItem;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.items = [
+      {label: 'All Sales Rep',
+      items: [
+        {label: 'John'},
+        {label: 'Robert'}
+    ]
+    }
+  ];
+  
+
   }
 
 }
