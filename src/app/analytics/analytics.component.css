@@ -1,0 +1,25 @@
+
+.topbar{
+    
+    margin: 0 80px;
+    
+}
+
+.container{
+    display: flex;
+    margin: 20px 80px;;
+}
+
+.SalesAnalytics{
+    border: 2px solid red;
+    flex-grow: 9;
+    height:500px;
+    
+}
+
+.Salesman{
+    border: 2px solid red;
+    flex-grow: 1;
+    height:500px;
+    margin-left:40px;
+}

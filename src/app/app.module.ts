@@ -8,18 +8,30 @@ import { SalesTableComponent } from './sales-table/sales-table.component';
 import { HeaderComponent } from './header/header.component';
 
 import {TableModule} from 'primeng/table';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {MenuItem} from 'primeng/api';
+import {CardModule} from 'primeng/card';
+
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { SalesReportComponent } from './analytics/sales-report/sales-report.component';
+import { SalesmanComponent } from './analytics/salesman/salesman.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SalesTableComponent,
-    HeaderComponent
+    HeaderComponent,
+    AnalyticsComponent,
+    SalesReportComponent,
+    SalesmanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    TabMenuModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
