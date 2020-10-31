@@ -11,6 +11,7 @@ import {TableModule} from 'primeng/table';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {MenuItem} from 'primeng/api';
 import {CardModule} from 'primeng/card';
+import {MenubarModule} from 'primeng/menubar';
 
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { SalesReportComponent } from './analytics/sales-report/sales-report.component';
@@ -31,7 +32,8 @@ import { SalesmanComponent } from './analytics/salesman/salesman.component';
     HttpClientModule,
     TableModule,
     TabMenuModule,
-    CardModule
+    CardModule,
+    MenubarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

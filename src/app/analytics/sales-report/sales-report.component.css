@@ -1,0 +1,14 @@
+.container{
+    display:flex;
+    justify-content: space-between;
+}
+
+.funnel{
+   
+    max-width: 650px;
+   
+}
+.funnel img{
+    max-width: 650px;
+}
+

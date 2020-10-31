@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import {SalesDetailService} from '../../sales-detail.service'
 
 @Component({
   selector: 'app-salesman',
@@ -8,18 +9,206 @@ import {MenuItem} from 'primeng/api';
 })
 export class SalesmanComponent implements OnInit {
 
+  @Input() timeframe;
   items: MenuItem[];
   activeItem: MenuItem;
+  SDetails:any[];
+  MRR=[0,0,0];
+  Logos=[0,0,0];
+  demo=[0,0,0];
 
-  constructor() { }
+  constructor(private db:SalesDetailService) { }
 
   ngOnInit(): void {
-    this.items = [
-      {label: 'TOP'},
-      {label: 'BOTTOM'}
-  ];
+         this.items = [
+           {label: 'TOP'},
+           {label: 'BOTTOM'}
+          ];
   
-  this.activeItem = this.items[0];
+          this.activeItem = this.items[0];
+
+          this.db.getSalesManStatus().subscribe(
+            (data)=>{this.SDetails=data
+            this.onTimeChange();}
+          )
+
+            console.log(this.timeframe);
+            this.timeframe='THIS QUARTER';
+            console.log(this.timeframe);
+              this.onTimeChange()
+            
+
   }
+
+  onTimeChange(){
+   
+    if(this.timeframe=='TODAY'){
+      let i=0;
+      
+      for(i=0;i<3;i++)
+        {
+       
+           this.MRR[i]=this.SDetails[i].New_MRR;
+           this.Logos[i]=this.SDetails[i].New_logos;
+           this.demo[i]=this.SDetails[i].Demo_calls
+      
+        }
+    }
+
+    else if(this.timeframe=='LAST WEEK'){
+      let today= new Date(this.SDetails[0].Date)
+      let lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+      let i=0;
+      while(this.SDetails[i]!=null){
+
+        let d=new Date(this.SDetails[i].Date)
+        if(d>lastWeek){
+
+            if(this.SDetails[i].Sname=='John Doe')
+            {
+              this.MRR[0]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[0]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[0]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Jane Smith')
+            {
+              this.MRR[1]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[1]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[1]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Ethan Hunt')
+            {
+              this.MRR[2]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[2]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[2]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+        }
+        i++;
+
+      }
+
+    }
+
+    else if(this.timeframe=='LAST MONTH'){
+
+      let today= new Date(this.SDetails[0].Date)
+      let lastMonth = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
+      let i=0;
+      while(this.SDetails[i]!=null){
+
+        let d=new Date(this.SDetails[i].Date)
+        if(d>lastMonth){
+
+            if(this.SDetails[i].Sname=='John Doe')
+            {
+              this.MRR[0]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[0]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[0]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Jane Smith')
+            {
+              this.MRR[1]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[1]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[1]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Ethan Hunt')
+            {
+              this.MRR[2]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[2]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[2]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+        }
+        i++;
+
+      }
+
+      
+    }
+
+    else if(this.timeframe=='THIS QUARTER'){
+
+      let today= new Date(this.SDetails[0].Date)
+      let lastQuarter = new Date(today.getFullYear(), today.getMonth()-3, today.getDate());
+      let i=0;
+      while(this.SDetails[i]!=null){
+
+        let d=new Date(this.SDetails[i].Date)
+        if(d>lastQuarter){
+
+            if(this.SDetails[i].Sname=='John Doe')
+            {
+              this.MRR[0]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[0]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[0]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Jane Smith')
+            {
+              this.MRR[1]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[1]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[1]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Ethan Hunt')
+            {
+              this.MRR[2]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[2]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[2]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+        }
+        i++;
+
+      }
+
+    }
+
+    else if(this.timeframe=='THIS YEAR'){
+      
+      let today= new Date(this.SDetails[0].Date)
+      let lastyear = new Date(today.getFullYear()-1, today.getMonth(), today.getDate());
+      let i=0;
+      while(this.SDetails[i]!=null){
+
+        let d=new Date(this.SDetails[i].Date)
+        if(d>lastyear){
+
+            if(this.SDetails[i].Sname=='John Doe')
+            {
+              this.MRR[0]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[0]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[0]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Jane Smith')
+            {
+              this.MRR[1]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[1]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[1]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+            else if(this.SDetails[i].Sname=='Ethan Hunt')
+            {
+              this.MRR[2]+=parseInt(this.SDetails[i].New_MRR);
+              this.Logos[2]+=parseInt(this.SDetails[i].New_logos);
+              this.demo[2]+=parseInt(this.SDetails[i].Demo_calls);
+            }
+
+        }
+        i++;
+
+      }
+    }
+
+  }
+
+  
+  
 
 }
