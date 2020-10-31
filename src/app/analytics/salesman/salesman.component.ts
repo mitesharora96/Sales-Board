@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit,OnChanges } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {SalesDetailService} from '../../sales-detail.service'
 
@@ -7,7 +8,7 @@ import {SalesDetailService} from '../../sales-detail.service'
   templateUrl: './salesman.component.html',
   styleUrls: ['./salesman.component.css']
 })
-export class SalesmanComponent implements OnInit {
+export class SalesmanComponent implements OnInit,OnChanges {
 
   @Input() timeframe;
   items: MenuItem[];
@@ -19,6 +20,10 @@ export class SalesmanComponent implements OnInit {
 
   constructor(private db:SalesDetailService) { }
 
+  ngOnChanges(changes: SimpleChanges){
+    let newVal = changes['timeframe'].currentValue;
+    this.onTimeChange(newVal);
+  }
   ngOnInit(): void {
          this.items = [
            {label: 'TOP'},
@@ -29,19 +34,15 @@ export class SalesmanComponent implements OnInit {
 
           this.db.getSalesManStatus().subscribe(
             (data)=>{this.SDetails=data
-            this.onTimeChange();}
-          )
-
-            console.log(this.timeframe);
-            this.timeframe='THIS QUARTER';
-            console.log(this.timeframe);
-              this.onTimeChange()
-            
-
+            this.onTimeChange(this.timeframe);}
+          )          
   }
 
-  onTimeChange(){
-   
+  onTimeChange(value){
+    this.timeframe=value;
+    this.MRR=[0,0,0];
+    this.Logos=[0,0,0];
+    this.demo=[0,0,0];
     if(this.timeframe=='TODAY'){
       let i=0;
       

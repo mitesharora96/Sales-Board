@@ -1,17 +1,17 @@
 
 
 <div class="topbar">
-<p-tabMenu [model]="items" [activeItem]="activeItem" (click)="Onclick()"></p-tabMenu>
+<p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
 </div>
 
 <div class="container">
 
 <div class="SalesAnalytics">
-    <app-sales-report [timeframe]='activeItem.label'></app-sales-report>
+    <app-sales-report [timeframe]='Time'></app-sales-report>
 </div>
 
 <div class="Salesman">
-    <app-salesman [timeframe]='activeItem.label'></app-salesman>
+    <app-salesman [timeframe]='Time'></app-salesman>
 </div>
 
 </div>
