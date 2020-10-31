@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,OnChanges, SimpleChanges } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {SalesDetailService} from '../../sales-detail.service'
 
@@ -7,7 +7,7 @@ import {SalesDetailService} from '../../sales-detail.service'
   templateUrl: './sales-report.component.html',
   styleUrls: ['./sales-report.component.css']
 })
-export class SalesReportComponent implements OnInit {
+export class SalesReportComponent implements OnInit,OnChanges {
 
   @Input() timeframe;
   items: MenuItem[];
@@ -17,6 +17,12 @@ export class SalesReportComponent implements OnInit {
 
   constructor(private db:SalesDetailService) { }
 
+  ngOnChanges(changes: SimpleChanges) {
+
+    let newVal = changes['timeframe'].currentValue;
+    this.onTimeChange(newVal);
+
+}
   ngOnInit(): void {
 
     this.items = [
@@ -31,16 +37,18 @@ export class SalesReportComponent implements OnInit {
     this.db.getContactDetails().subscribe(
       (data)=>{
         this.CDetails=data;
-        this.onTimeChange();
+        this.onTimeChange(this.timeframe);
       }
     )
-    this.timeframe='TODAY';
+    
 
   }
 
-  onTimeChange(){
+  onTimeChange(value){
+    this.timeframe=value;
+    this.contacts=[0,0,0,0,0,0];
     if(this.timeframe=='TODAY'){
-      this.contacts=[0,0,0,0,0,0]
+      
       this.contacts[0]=this.CDetails[0].Lead_in;
       this.contacts[1]=this.CDetails[0].Contact_made;
       this.contacts[2]=this.CDetails[0].Needs_defined;
