@@ -6,9 +6,58 @@
 .funnel{
    
     max-width: 650px;
+    position: relative;
+    text-align: center;
+    color: white;
    
 }
 .funnel img{
     max-width: 650px;
 }
 
+.first{
+    position: absolute;
+    top: 22px;
+    left: 282px;
+    font-size: 18px;
+}
+
+.second{
+    position: absolute;
+    top: 120px;
+    left: 258px;
+    font-size: 18px;
+}
+
+.third{
+    position: absolute;
+    top: 220px;
+    left: 252px;
+    font-size: 18px;
+}
+
+.fourth{
+    position: absolute;
+    top: 320px;
+    left: 252px;
+    font-size: 18px;
+}
+
+.fifth{
+    position: absolute;
+    top: 418px;
+    left: 230px;
+    font-size: 18px;
+}
+
+.sixth{
+    position: absolute;
+    top: 505px;
+    left: 252px;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+div span{
+    font-size: 48px;
+}
