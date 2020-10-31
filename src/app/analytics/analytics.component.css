@@ -7,19 +7,17 @@
 
 .container{
     display: flex;
-    margin: 20px 80px;;
+    margin: 20px 80px;
 }
 
 .SalesAnalytics{
-    border: 2px solid black;
-    flex-grow: 9;
-    height:500px;
+    
+    flex-grow: 1;
+    
     
 }
 
 .Salesman{
-    border: 2px solid black;
     flex-grow: 1;
-    height:500px;
     margin-left:40px;
 }

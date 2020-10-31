@@ -12,4 +12,12 @@ export class SalesDetailService {
   getSalesDetails():Observable<any>{
     return this.http.get("../assets/salesRecord.json")
    } 
+
+  getSalesManStatus():Observable<any>{
+    return this.http.get("../assets/salesman.json")
+  }
+
+  getContactDetails():Observable<any>{
+    return this.http.get("../assets/contacts.json")
+  }
 }

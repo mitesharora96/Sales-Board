@@ -1,0 +1,51 @@
+[
+	{
+		"Date":"10/30/2020",
+		"Lead_in":"25",
+		"Contact_made":"18",
+		"Needs_defined":"12",
+		"Proposal_made":"8",
+		"Negotiations":"5",
+		"Won":"3"
+	},
+
+	{
+		"Date":"10/29/2020",
+		"Lead_in":"35",
+		"Contact_made":"15",
+		"Needs_defined":"22",
+		"Proposal_made":"8",
+		"Negotiations":"5",
+		"Won":"1"
+	},
+
+	{
+		"Date":"10/22/2020",
+		"Lead_in":"47",
+		"Contact_made":"25",
+		"Needs_defined":"22",
+		"Proposal_made":"8",
+		"Negotiations":"5",
+		"Won":"8"
+	},
+
+	{
+		"Date":"09/22/2020",
+		"Lead_in":"27",
+		"Contact_made":"16",
+		"Needs_defined":"12",
+		"Proposal_made":"6",
+		"Negotiations":"4",
+		"Won":"2"
+	},
+
+	{
+		"Date":"06/22/2020",
+		"Lead_in":"27",
+		"Contact_made":"16",
+		"Needs_defined":"12",
+		"Proposal_made":"6",
+		"Negotiations":"4",
+		"Won":"2"
+	}
+]

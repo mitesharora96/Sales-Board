@@ -28,6 +28,6 @@ export class AnalyticsComponent implements OnInit {
   }
 
   Onclick(){
-    console.log(this.activeItem);
+    console.log(this.activeItem.label);
   }
 }
