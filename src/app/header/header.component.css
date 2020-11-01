@@ -1,32 +1,38 @@
+
 .header{
     height:130px;
-    width:100%;
     box-sizing: border-box;
-    position: relative;
-    margin-bottom: 0;
-}
-
-img{
-    position: absolute;
-    top:0;
-    bottom: 0px;
-    left:80px;
-    margin-top: auto;
-    margin-bottom: auto;
-    
-   
+    margin: 0 80px;
+    display: flex;
+    align-items: center;
 }
 
  span{ 
-    position: absolute;
-    top:43px;
-    right:80px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto 0 auto auto;
     font-family: 'Roboto', sans-serif;
     font-size: 48px;
     font-weight: lighter;
     color: #231f20;
+}
+
+
+
+
+@media only screen and (max-width: 992px) {
+    .header{
+        margin:0 40px;
+    }
+    img{
+        
+        width: 150px;
+        left:40px;
+    }
+
+    span{
+        font-size: 24px;
+        top:56px;
+        right:40px;
+    }
 }
 
 

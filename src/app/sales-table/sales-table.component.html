@@ -1,6 +1,6 @@
 <h2>Details</h2>
 
-<p-table [value]="details" styleClass="p-datatable-responsive-demo p-datatable-striped">
+<p-table [value]="details" styleClass="p-datatable-responsive-demo p-datatable-striped detailTable">
     <ng-template pTemplate="header">
         <tr>
             <th>Sales Rep</th>
@@ -16,7 +16,7 @@
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-details>
-        <tr>
+        <tr [ngClass]="{'row1': details.E_status === 'Won','row2': details.E_status === 'Lost'}">
             <td>{{details.Sales_Rep}}</td>
             <td>{{details.Date | date}}</td>
             <td>{{details.Client}}</td>
