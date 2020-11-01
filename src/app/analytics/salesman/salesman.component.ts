@@ -1,15 +1,15 @@
 import { SimpleChanges } from '@angular/core';
 import { Component, Input, OnInit,OnChanges } from '@angular/core';
 import {MenuItem} from 'primeng/api';
-import {SalesDetailService} from '../../sales-detail.service'
+import {SalesDetailService} from '../../Shared_Service/sales-detail.service'
 
 @Component({
   selector: 'app-salesman',
   templateUrl: './salesman.component.html',
   styleUrls: ['./salesman.component.css']
 })
-export class SalesmanComponent implements OnInit,OnChanges {
-
+export class SalesmanComponent implements OnInit,OnChanges { // the component contains analytics on the right side of page. the MRR counts...
+                          
   @Input() timeframe;
   items: MenuItem[];
   activeItem: MenuItem;
@@ -34,7 +34,7 @@ export class SalesmanComponent implements OnInit,OnChanges {
 
           this.db.getSalesManStatus().subscribe(
             (data)=>{this.SDetails=data
-            this.onTimeChange(this.timeframe);}
+            this.onTimeChange(this.timeframe);} // function changes analytics input depending on the time selected
           )          
   }
 
@@ -44,15 +44,12 @@ export class SalesmanComponent implements OnInit,OnChanges {
     this.Logos=[0,0,0];
     this.demo=[0,0,0];
     if(this.timeframe=='TODAY'){
-      let i=0;
-      
+      let i=0;    
       for(i=0;i<3;i++)
-        {
-       
+        {  
            this.MRR[i]=this.SDetails[i].New_MRR;
            this.Logos[i]=this.SDetails[i].New_logos;
-           this.demo[i]=this.SDetails[i].Demo_calls
-      
+           this.demo[i]=this.SDetails[i].Demo_calls 
         }
     }
 
@@ -60,11 +57,9 @@ export class SalesmanComponent implements OnInit,OnChanges {
       let today= new Date(this.SDetails[0].Date)
       let lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
       let i=0;
-      while(this.SDetails[i]!=null){
-
+      while(!!this.SDetails[i]){
         let d=new Date(this.SDetails[i].Date)
         if(d>lastWeek){
-
             if(this.SDetails[i].Sname=='John Doe')
             {
               this.MRR[0]+=parseInt(this.SDetails[i].New_MRR);
@@ -85,12 +80,9 @@ export class SalesmanComponent implements OnInit,OnChanges {
               this.Logos[2]+=parseInt(this.SDetails[i].New_logos);
               this.demo[2]+=parseInt(this.SDetails[i].Demo_calls);
             }
-
         }
         i++;
-
       }
-
     }
 
     else if(this.timeframe=='LAST MONTH'){
@@ -98,7 +90,7 @@ export class SalesmanComponent implements OnInit,OnChanges {
       let today= new Date(this.SDetails[0].Date)
       let lastMonth = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
       let i=0;
-      while(this.SDetails[i]!=null){
+      while(!!this.SDetails[i]){
 
         let d=new Date(this.SDetails[i].Date)
         if(d>lastMonth){
@@ -123,13 +115,9 @@ export class SalesmanComponent implements OnInit,OnChanges {
               this.Logos[2]+=parseInt(this.SDetails[i].New_logos);
               this.demo[2]+=parseInt(this.SDetails[i].Demo_calls);
             }
-
         }
         i++;
-
-      }
-
-      
+      }    
     }
 
     else if(this.timeframe=='THIS QUARTER'){
@@ -137,7 +125,7 @@ export class SalesmanComponent implements OnInit,OnChanges {
       let today= new Date(this.SDetails[0].Date)
       let lastQuarter = new Date(today.getFullYear(), today.getMonth()-3, today.getDate());
       let i=0;
-      while(this.SDetails[i]!=null){
+      while(!!this.SDetails[i]){
 
         let d=new Date(this.SDetails[i].Date)
         if(d>lastQuarter){
@@ -162,12 +150,9 @@ export class SalesmanComponent implements OnInit,OnChanges {
               this.Logos[2]+=parseInt(this.SDetails[i].New_logos);
               this.demo[2]+=parseInt(this.SDetails[i].Demo_calls);
             }
-
         }
         i++;
-
       }
-
     }
 
     else if(this.timeframe=='THIS YEAR'){
@@ -175,7 +160,7 @@ export class SalesmanComponent implements OnInit,OnChanges {
       let today= new Date(this.SDetails[0].Date)
       let lastyear = new Date(today.getFullYear()-1, today.getMonth(), today.getDate());
       let i=0;
-      while(this.SDetails[i]!=null){
+      while(!!this.SDetails[i]){
 
         let d=new Date(this.SDetails[i].Date)
         if(d>lastyear){
@@ -203,13 +188,7 @@ export class SalesmanComponent implements OnInit,OnChanges {
 
         }
         i++;
-
       }
     }
-
   }
-
-  
-  
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SalesDetailService} from '../sales-detail.service'
+import {SalesDetailService} from '../Shared_Service/sales-detail.service'
 
 @Component({
   selector: 'app-sales-table',

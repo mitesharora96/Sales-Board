@@ -1,6 +1,7 @@
 .container{
     display:flex;
     justify-content: space-between;
+    flex-direction: row;
 }
 
 .funnel{
@@ -18,7 +19,7 @@
 .first{
     position: absolute;
     top: 22px;
-    left: 282px;
+    left: 284px;
     font-size: 18px;
 }
 
@@ -58,6 +59,90 @@
     font-size: 48px;
 }
 
-div span{
+.nums{
     font-size: 48px;
+    color: white;
+}
+
+:host ::ng-deep .card{
+    margin: 2em 0;
+    text-align:center;
+    height:200px;
+    width:300px;
+    position:relative;
+
+}
+:host ::ng-deep .card img{
+    position:absolute;
+        top:30px;
+        left:30px;
+}
+:host ::ng-deep .card p{
+    position:absolute;
+    bottom:10px;
+    right:30px;
+    text-align:right;
+    font-size:18px;
+    color:#2c3e50;
+}
+
+:host ::ng-deep .card span{
+    
+        font-size:48px;
+        font-weight:bold;
+        color:#2196f3
+}
+
+@media only screen and (max-width: 1200px) {
+
+   
+    .container{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .funnel{
+        width: 450px;
+       
+    }
+    .funnel img{
+        width: 450px;
+        margin-bottom: 50px;
+    }
+
+    .first,.second,.third,.fourth,.fifth,.sixth{
+        font-size: 14px;
+        left:180px;
+    }
+
+    div span{
+        font-size: 28px;
+    }
+
+    .first{
+        top:12px;
+        left:204px;
+    }
+    .second{
+        top:90px;
+        
+    }
+    .third{
+        top:160px;
+    }
+    .fourth{
+        top:235px;
+    }
+    .fifth{
+        top:305px;
+        left:162px;
+    }
+    .sixth{
+        top:382px;
+        left:204px;
+        font-size: 18px;
+    }
+
+
 }

@@ -1,14 +1,16 @@
 import { Component, Input, OnInit,OnChanges, SimpleChanges } from '@angular/core';
 import {MenuItem} from 'primeng/api';
-import {SalesDetailService} from '../../sales-detail.service'
+import {SalesDetailService} from '../../Shared_Service/sales-detail.service'
 
 @Component({
   selector: 'app-sales-report',
   templateUrl: './sales-report.component.html',
   styleUrls: ['./sales-report.component.css']
 })
-export class SalesReportComponent implements OnInit,OnChanges {
-
+export class SalesReportComponent implements OnInit,OnChanges {   
+  
+  // the component contains analytics on displayed on the left side of page i.e Leads in .....
+ 
   @Input() timeframe;
   items: MenuItem[];
   activeItem: MenuItem;
@@ -37,7 +39,7 @@ export class SalesReportComponent implements OnInit,OnChanges {
     this.db.getContactDetails().subscribe(
       (data)=>{
         this.CDetails=data;
-        this.onTimeChange(this.timeframe);
+        this.onTimeChange(this.timeframe); // the function changes analytics value depending on time selected(today,last week,etc)
       }
     )
     
@@ -62,23 +64,18 @@ export class SalesReportComponent implements OnInit,OnChanges {
       let today= new Date(this.CDetails[0].Date)
       let lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
       let i=0;
-      while(this.CDetails[i]!=null){
+      while(!!this.CDetails[i]){
 
         let d=new Date(this.CDetails[i].Date)
-        if(d>lastWeek){
-
-            
+        if(d>lastWeek){  
               this.contacts[0]+=parseInt(this.CDetails[i].Lead_in);
               this.contacts[1]+=parseInt(this.CDetails[i].Contact_made);
               this.contacts[2]+=parseInt(this.CDetails[i].Needs_defined);
               this.contacts[3]+=parseInt(this.CDetails[i].Proposal_made);
               this.contacts[4]+=parseInt(this.CDetails[i].Negotiations);
               this.contacts[5]+=parseInt(this.CDetails[i].Won);
-           
-
         }
         i++;
-
       }
     }
 
@@ -87,23 +84,18 @@ export class SalesReportComponent implements OnInit,OnChanges {
       let today= new Date(this.CDetails[0].Date)
       let lastMonth = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
       let i=0;
-      while(this.CDetails[i]!=null){
+      while(!!this.CDetails[i]){
 
         let d=new Date(this.CDetails[i].Date)
         if(d>lastMonth){
-
-            
               this.contacts[0]+=parseInt(this.CDetails[i].Lead_in);
               this.contacts[1]+=parseInt(this.CDetails[i].Contact_made);
               this.contacts[2]+=parseInt(this.CDetails[i].Needs_defined);
               this.contacts[3]+=parseInt(this.CDetails[i].Proposal_made);
               this.contacts[4]+=parseInt(this.CDetails[i].Negotiations);
               this.contacts[5]+=parseInt(this.CDetails[i].Won);
-           
-
         }
         i++;
-
       }
     }
 
@@ -112,23 +104,18 @@ export class SalesReportComponent implements OnInit,OnChanges {
       let today= new Date(this.CDetails[0].Date)
       let lastQuarter = new Date(today.getFullYear(), today.getMonth()-3, today.getDate());
       let i=0;
-      while(this.CDetails[i]!=null){
+      while(!!this.CDetails[i]){
 
         let d=new Date(this.CDetails[i].Date)
         if(d>lastQuarter){
-
-            
               this.contacts[0]+=parseInt(this.CDetails[i].Lead_in);
               this.contacts[1]+=parseInt(this.CDetails[i].Contact_made);
               this.contacts[2]+=parseInt(this.CDetails[i].Needs_defined);
               this.contacts[3]+=parseInt(this.CDetails[i].Proposal_made);
               this.contacts[4]+=parseInt(this.CDetails[i].Negotiations);
               this.contacts[5]+=parseInt(this.CDetails[i].Won);
-           
-
         }
         i++;
-
       }
     }
 
@@ -137,23 +124,18 @@ export class SalesReportComponent implements OnInit,OnChanges {
       let today= new Date(this.CDetails[0].Date)
       let lastYear = new Date(today.getFullYear()-1, today.getMonth(), today.getDate());
       let i=0;
-      while(this.CDetails[i]!=null){
+      while(!!this.CDetails[i]){
 
         let d=new Date(this.CDetails[i].Date)
         if(d>lastYear){
-
-            
               this.contacts[0]+=parseInt(this.CDetails[i].Lead_in);
               this.contacts[1]+=parseInt(this.CDetails[i].Contact_made);
               this.contacts[2]+=parseInt(this.CDetails[i].Needs_defined);
               this.contacts[3]+=parseInt(this.CDetails[i].Proposal_made);
               this.contacts[4]+=parseInt(this.CDetails[i].Negotiations);
               this.contacts[5]+=parseInt(this.CDetails[i].Won);
-           
-
         }
         i++;
-
       }
     }
 

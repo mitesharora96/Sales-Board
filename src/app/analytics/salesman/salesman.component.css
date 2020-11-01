@@ -1,0 +1,46 @@
+.cards {
+    position: relative;
+    
+}
+
+table{
+    position: absolute;
+    top:-5px;
+    left:0px;
+    width: 250px;
+    
+}
+
+:host ::ng-deep .Menu li {
+    
+    color: #2c3e50;
+    opacity: 0.5;
+    width: 50%;
+   text-align: center;
+   
+}
+:host ::ng-deep  .statusCard{
+    margin: 2em 0;
+    text-align:center;
+    background-color:#1976D2;
+    height:200px;
+    color:#ffffff
+}
+
+.th{
+    font-size:18px;
+    text-align:left;
+}
+
+.td{
+    font-weight:bold;
+    font-size:30px;
+    text-align:right
+}
+@media only screen and (max-width: 1200px) {
+    .container{
+        width: 300px;
+        
+    }
+
+}
